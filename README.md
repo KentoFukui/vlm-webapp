@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VLM 画像解析アプリ
 
-## Getting Started
+画像をアップロードすると、GPT-4o Vision APIが日本語で内容を説明するWebアプリです。
 
-First, run the development server:
+## 使い方
+
+### 1. リポジトリをクローン
+
+```bash
+git clone https://github.com/KentoFukui/vlm-webapp.git
+cd vlm-webapp
+```
+
+### 2. 依存パッケージをインストール
+
+Node.js v20以上が必要です。
+
+```bash
+npm install
+```
+
+### 3. APIキーを設定
+
+`.env.local.example` をコピーして `.env.local` を作成し、OpenAI APIキーを入力します。
+
+```bash
+cp .env.local.example .env.local
+```
+
+`.env.local` を開いて編集：
+
+```
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxx
+```
+
+### 4. 開発サーバーを起動
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで [http://localhost:3000](http://localhost:3000) を開きます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 5. 画像を解析する
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. 画面中央のエリアをクリックして画像を選択
+2. 「画像を解析する」ボタンを押す
+3. しばらく待つと、AIが画像の内容を日本語で説明します
 
-## Learn More
+## 使用技術
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js](https://nextjs.org) (App Router)
+- TypeScript
+- Tailwind CSS
+- [OpenAI GPT-4o Vision API](https://platform.openai.com/docs/guides/vision)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 注意事項
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `.env.local` はGitにコミットしないでください（APIキーが漏洩します）
+- OpenAI APIの利用には料金が発生します。[料金ページ](https://openai.com/pricing)を確認してください
