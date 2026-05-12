@@ -1,6 +1,6 @@
 # VLM 画像解析アプリ
 
-画像をアップロードすると、GPT-4o Vision APIが日本語で内容を説明するWebアプリです。
+画像をアップロードすると、GPT-4o Vision APIが日本語で内容を説明するWebアプリです。Next.js + TypeScript + Tailwind CSSで構築しています。
 
 ## 使い方
 
